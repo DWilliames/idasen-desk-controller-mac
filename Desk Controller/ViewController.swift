@@ -175,21 +175,19 @@ class ViewController: NSViewController {
         
     }
     
-    func onDeskPositionChange(_ currPosition: Float) {
+    func onDeskPositionChange(_ newPosition: Float) {
         DispatchQueue.main.async {
             
-            let currPositionOffset = currPosition + Preferences.shared.positionOffset
-            var convertedPosition = currPositionOffset
+            var convertedPosition = newPosition + Preferences.shared.positionOffset
             
             if !Preferences.shared.isMetric {
                 convertedPosition = convertedPosition.convertToInches()
             }
             
             self.currentPositionLabel?.stringValue = "\(Int(convertedPosition.rounded()))"
-            
-            self.sitButton?.isEnabled = !(Preferences.shared.sittingPosition.rounded() == currPositionOffset.rounded())
-            self.standButton?.isEnabled = !(Preferences.shared.standingPosition.rounded() == currPositionOffset.rounded())
 
+            self.sitButton?.isEnabled = abs((Preferences.shared.sittingPosition - Preferences.shared.positionOffset) - newPosition) > 0.5
+            self.standButton?.isEnabled = abs((Preferences.shared.standingPosition - Preferences.shared.positionOffset) - newPosition) > 0.5
         }
     }
     
