@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 class AutoStand: NSObject {
     
@@ -49,7 +50,7 @@ class AutoStand: NSObject {
                 DeskController.shared?.moveToPosition(.sit)
                 // print("Fired down timer: \(Date())")
             })
-            upTimer?.tolerance = 10
+            downTimer?.tolerance = 10
             
             RunLoop.main.add(upTimer!, forMode: .common)
             RunLoop.main.add(downTimer!, forMode: .common)

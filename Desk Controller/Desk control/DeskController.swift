@@ -134,7 +134,7 @@ class DeskController: NSObject {
         }
         
         let speed = desk.speed
-        
+        position = position + Preferences.shared.positionOffset
         let timeSinceLastMove = lastMoveTime.distance(to: Date())
         let distanceSincePreviousPosition = abs((previousPosition ?? position + minMovementIncrements) - position)
         
