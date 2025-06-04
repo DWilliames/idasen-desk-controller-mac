@@ -97,7 +97,7 @@ extension BluetoothManager: CBCentralManagerDelegate {
             availablePeripherals.append(peripheral)
         }
         
-        let isClosestMatchingPeripheral = (connectPeripheralRSSI != nil && RSSI.intValue < connectPeripheralRSSI!.intValue)
+        let isClosestMatchingPeripheral = (connectPeripheralRSSI != nil && RSSI.intValue > connectPeripheralRSSI!.intValue)
         
         // If it's the first match or it's the closest one; update the connect peripheral
         if connectedPeripheral == nil || isClosestMatchingPeripheral {
