@@ -767,39 +767,15 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
-                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gjk-WA-zuy">
+                                    <stackView distribution="fillEqually" orientation="vertical" alignment="centerX" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pSV-xy-123">
                                         <rect key="frame" x="87" y="6" width="106" height="52"/>
-                                        <subviews>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8F3-Qr-NGL">
-                                                <rect key="frame" x="-7" y="25" width="120" height="32"/>
-                                                <buttonCell key="cell" type="push" title="Move to stand" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6p2-ir-95H">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="stand:" target="XfG-lQ-9wD" id="Ydu-kc-tlr"/>
-                                                </connections>
-                                            </button>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sMD-Fh-S43">
-                                                <rect key="frame" x="-7" y="-7" width="120" height="32"/>
-                                                <buttonCell key="cell" type="push" title="Move to sit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="urj-lY-KBJ">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="sit:" target="XfG-lQ-9wD" id="AKo-k9-Gnq"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
                                         <constraints>
-                                            <constraint firstItem="8F3-Qr-NGL" firstAttribute="width" secondItem="sMD-Fh-S43" secondAttribute="width" id="OHf-KO-dZf"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="106" id="pSV-wd-456"/>
                                         </constraints>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
-                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
-                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
@@ -912,8 +888,7 @@
                         <outlet property="deviceNameLabel" destination="VPj-Eg-reC" id="wH5-Ag-14g"/>
                         <outlet property="downButton" destination="v7s-Fd-rhs" id="hcR-Vw-Eav"/>
                         <outlet property="messageLabel" destination="U7R-vc-jmR" id="sbS-C9-WYP"/>
-                        <outlet property="sitButton" destination="sMD-Fh-S43" id="xug-y8-bFh"/>
-                        <outlet property="standButton" destination="8F3-Qr-NGL" id="hzp-Ly-67r"/>
+                        <outlet property="presetsStackView" destination="pSV-xy-123" id="pSV-cn-789"/>
                         <outlet property="statusIndicator" destination="rUw-nA-u7b" id="Pgb-dU-g6q"/>
                         <outlet property="statusLabel" destination="eTy-PU-lrl" id="gwX-bh-nOw"/>
                         <outlet property="upButton" destination="XC4-5A-QYb" id="7ia-iB-5Mv"/>

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,8 @@
 		7DA946FD25AD32BB000B4816 /* deskcontroller.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 7DA946FC25AD32BB000B4816 /* deskcontroller.sdef */; };
 		7DA9470025AD3462000B4816 /* MoveDeskCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA946FF25AD3462000B4816 /* MoveDeskCommand.swift */; };
 		81293EBE25F24047007D3663 /* AutoStand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81293EBD25F24047007D3663 /* AutoStand.swift */; };
+		AA0001012B0000010000001A /* DeskPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0001002B0000010000001A /* DeskPreset.swift */; };
+		AA0001032B0000010000001B /* PresetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0001022B0000010000001B /* PresetManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		7DA9470825AD8F9A000B4816 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7DA9470A25AD9C93000B4816 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		81293EBD25F24047007D3663 /* AutoStand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoStand.swift; sourceTree = "<group>"; };
+		AA0001002B0000010000001A /* DeskPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskPreset.swift; sourceTree = "<group>"; };
+		AA0001022B0000010000001B /* PresetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 		7D0361A525AC42690051FB71 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
+				AA0001002B0000010000001A /* DeskPreset.swift */,
+				AA0001022B0000010000001B /* PresetManager.swift */,
 				7D03619D25AC39B80051FB71 /* Preferences.swift */,
 				7D0361A025AC42610051FB71 /* PreferencesWindowController.swift */,
 				7D0361A125AC42610051FB71 /* PreferencesWindowController.xib */,
@@ -252,6 +258,8 @@
 				6310F76F2849DAD100F3D9BB /* MoveDeskToHeightCommand.swift in Sources */,
 				7D93E29A25AAD2D400F37364 /* DeskPeripheral.swift in Sources */,
 				7D0361A225AC42610051FB71 /* PreferencesWindowController.swift in Sources */,
+				AA0001012B0000010000001A /* DeskPreset.swift in Sources */,
+				AA0001032B0000010000001B /* PresetManager.swift in Sources */,
 				7D93E2A025AB203800F37364 /* TouchButton.swift in Sources */,
 				7D81872325ABF1500076DC19 /* Extensions.swift in Sources */,
 				81293EBE25F24047007D3663 /* AutoStand.swift in Sources */,
@@ -403,7 +411,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 7;
-				DEVELOPMENT_TEAM = 3P725D2V7A;
+				DEVELOPMENT_TEAM = Y6PBVT68GP;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Desk Controller/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -427,7 +435,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 7;
-				DEVELOPMENT_TEAM = 3P725D2V7A;
+				DEVELOPMENT_TEAM = Y6PBVT68GP;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Desk Controller/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
