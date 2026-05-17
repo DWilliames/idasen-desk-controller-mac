@@ -25,11 +25,24 @@ class MoveDeskCommand: NSScriptCommand {
         case "up":
             DeskController.shared?.moveUp()
             break
-            
+
         case "down":
             DeskController.shared?.moveDown()
             break
         default:
+            // Accept absolute-height shortcuts: `move "120cm"`, `move "55in"`,
+            // or `move "80"` (cm/in interpreted via the Preferences unit).
+            var height: Float?
+            if parameter.hasSuffix("cm") {
+                height = Float(parameter.dropLast(2))
+            } else if parameter.hasSuffix("in") {
+                height = Float(parameter.dropLast(2))?.convertToCentimeters()
+            } else if let value = Float(parameter) {
+                height = Preferences.shared.isMetric ? value : value.convertToCentimeters()
+            }
+            if let height = height {
+                DeskController.shared?.moveToHeight(height)
+            }
             break
         }
 
