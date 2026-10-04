@@ -7,31 +7,12 @@
 
 import Foundation
 
-
-class MoveDeskToHeightCommand: NSScriptCommand {
-    
-    override func performDefaultImplementation() -> Any? {
-        
-        guard let parameter = directParameter as? String else {
-            return nil
-        }
-        
-        var height: Float?
-        
-        print("Move desk to: \(parameter)")
-        
-        if parameter.hasSuffix("cm") {
-            height = Float(parameter.dropLast(2))
-        } else if parameter.hasSuffix("in") {
-            height = Float(parameter.dropLast(2))?.convertToCentimeters()
-        } else if let value = Float(parameter) {
-            height = Preferences.shared.isMetric ? value : value.convertToCentimeters()
-        }
-        
-        if let height = height {
-            DeskController.shared?.moveToHeight(height)
-        }
-        
-        return nil
-    }
-}
+/// `move to "<height>"`.
+///
+/// Both commands in deskcontroller.sdef declare the Apple event code
+/// `lkpstrng`, so Cocoa Scripting hands every `move …` *and* `move to …`
+/// event to this class — which used to parse heights only, silently ignoring
+/// `move "to-sit"`, `"to-stand"`, `"up"` and `"down"`. Inheriting
+/// `MoveDeskCommand`'s handler makes every form work whichever class receives
+/// the event, without changing the sdef codes existing compiled scripts use.
+class MoveDeskToHeightCommand: MoveDeskCommand {}

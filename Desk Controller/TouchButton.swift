@@ -18,6 +18,7 @@ class TouchButton: NSButton {
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
+        setup()
     }
     
     func setup() {

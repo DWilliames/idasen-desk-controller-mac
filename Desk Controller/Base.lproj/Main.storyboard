@@ -734,7 +734,7 @@
                                                 <buttonCell key="cell" type="bevel" bezelStyle="rounded" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="ow8-7N-pOv">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
-                                                    <imageReference key="image" image="Up" symbolScale="large"/>
+                                                    <imageReference key="image" image="chevron.up.circle" catalog="system" symbolScale="large"/>
                                                 </buttonCell>
                                                 <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <connections>
@@ -750,7 +750,7 @@
                                                 <buttonCell key="cell" type="bevel" bezelStyle="rounded" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="pjY-sv-S9e">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
-                                                    <imageReference key="image" image="Down" symbolScale="large"/>
+                                                    <imageReference key="image" image="chevron.down.circle" catalog="system" symbolScale="large"/>
                                                 </buttonCell>
                                                 <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <connections>
@@ -825,16 +825,16 @@
                                             <rect key="frame" x="24" y="10" width="129" height="13"/>
                                             <subviews>
                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="rUw-nA-u7b">
-                                                    <rect key="frame" x="0.0" y="3" width="6" height="6"/>
+                                                    <rect key="frame" x="0.0" y="3" width="8" height="8"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="6" id="6w9-7W-Tam"/>
+                                                        <constraint firstAttribute="width" constant="8" id="6w9-7W-Tam"/>
                                                         <constraint firstAttribute="width" secondItem="rUw-nA-u7b" secondAttribute="height" multiplier="1:1" id="gl6-DV-E5y"/>
                                                     </constraints>
                                                 </customView>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eTy-PU-lrl">
                                                     <rect key="frame" x="12" y="0.0" width="57" height="13"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Connected" id="eem-SW-DPX">
-                                                        <font key="font" textStyle="caption1" name=".SFNS-Regular"/>
+                                                        <font key="font" textStyle="subheadline"/>
                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
@@ -842,7 +842,7 @@
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VPj-Eg-reC">
                                                     <rect key="frame" x="73" y="0.0" width="58" height="13"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Desk name" id="LVj-kU-Lnh">
-                                                        <font key="font" textStyle="caption1" name=".SFNS-Regular"/>
+                                                        <font key="font" textStyle="subheadline"/>
                                                         <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
@@ -861,7 +861,8 @@
                                         </stackView>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FjW-Es-6vS">
                                             <rect key="frame" x="326" y="9" width="15" height="15"/>
-                                            <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSActionTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="6hs-wE-dph">
+                                            <buttonCell key="cell" type="bevel" bezelStyle="rounded" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="6hs-wE-dph">
+                                                <imageReference key="image" image="gearshape" catalog="system"/>
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -871,17 +872,16 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="FjW-Es-6vS" firstAttribute="leading" secondItem="AoN-DW-xP2" secondAttribute="trailing" constant="173" id="CP1-wS-VcV"/>
+                                        <constraint firstItem="FjW-Es-6vS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AoN-DW-xP2" secondAttribute="trailing" constant="8" id="CP1-wS-VcV"/>
                                         <constraint firstItem="FjW-Es-6vS" firstAttribute="centerY" secondItem="jGo-1D-1pn" secondAttribute="centerY" id="I9l-8g-WMO"/>
                                         <constraint firstItem="AoN-DW-xP2" firstAttribute="centerY" secondItem="jGo-1D-1pn" secondAttribute="centerY" id="VCk-Ez-LSW"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FjW-Es-6vS" secondAttribute="trailing" constant="16" symbolic="YES" id="tCo-y5-TTO"/>
+                                        <constraint firstAttribute="trailing" secondItem="FjW-Es-6vS" secondAttribute="trailing" constant="16" id="tCo-y5-TTO"/>
                                         <constraint firstItem="AoN-DW-xP2" firstAttribute="leading" secondItem="jGo-1D-1pn" secondAttribute="leading" constant="24" id="u2I-p4-Hgd"/>
                                     </constraints>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="Qim-Gk-zrP"/>
+                                    <constraint firstAttribute="height" constant="40" id="Qim-Gk-zrP"/>
                                 </constraints>
-                                <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </box>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="U7R-vc-jmR">
                                 <rect key="frame" x="141" y="114" width="84" height="14"/>
@@ -924,9 +924,5 @@
             <point key="canvasLocation" x="75" y="260"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Down" width="16" height="16"/>
-        <image name="NSActionTemplate" width="15" height="15"/>
-        <image name="Up" width="16" height="16"/>
-    </resources>
+    <resources/>
 </document>

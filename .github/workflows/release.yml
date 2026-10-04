@@ -1,0 +1,99 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to publish (e.g. v2.0.0)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and publish .app
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve tag
+        id: tag
+        run: |
+          TAG="${{ github.event.inputs.tag || github.ref_name }}"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=${TAG#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_26.6.app
+
+      - name: Build Release (arm64, ad-hoc signed)
+        run: |
+          xcodebuild \
+            -project "Desk Controller.xcodeproj" \
+            -scheme "Desk Controller" \
+            -configuration Release \
+            -derivedDataPath build \
+            ARCHS=arm64 \
+            ONLY_ACTIVE_ARCH=NO \
+            CODE_SIGN_IDENTITY="-" \
+            CODE_SIGN_STYLE=Manual \
+            DEVELOPMENT_TEAM="" \
+            MARKETING_VERSION="${{ steps.tag.outputs.version }}" \
+            build
+
+      - name: Stage and zip the .app
+        id: pkg
+        run: |
+          APP_SRC="build/Build/Products/Release/Desk Controller.app"
+          test -d "$APP_SRC" || (echo "App bundle missing"; exit 1)
+          STAGE="dist"
+          mkdir -p "$STAGE"
+          cp -R "$APP_SRC" "$STAGE/"
+          cd "$STAGE"
+          /usr/bin/ditto -c -k --sequesterRsrc --keepParent "Desk Controller.app" "Desk-Controller-${{ steps.tag.outputs.tag }}.zip"
+          echo "zip=$STAGE/Desk-Controller-${{ steps.tag.outputs.tag }}.zip" >> "$GITHUB_OUTPUT"
+
+      - name: Verify binary architecture
+        run: |
+          BIN="build/Build/Products/Release/Desk Controller.app/Contents/MacOS/Desk Controller"
+          file "$BIN"
+          lipo -info "$BIN"
+
+      - name: Generate release notes
+        id: notes
+        run: |
+          {
+            echo "notes<<EOF"
+            echo "Release ${{ steps.tag.outputs.tag }} — built via GitHub Actions (Apple Silicon, macOS 13.0+)."
+            echo ""
+            echo "## Install"
+            echo "1. Download \`Desk-Controller-${{ steps.tag.outputs.tag }}.zip\`."
+            echo "2. Unzip and drag \`Desk Controller.app\` into \`/Applications\`."
+            echo "3. Remove the macOS quarantine attribute (the app is ad-hoc signed, not notarized):"
+            echo '   \`\`\`'
+            echo "   xattr -dr com.apple.quarantine /Applications/Desk\\ Controller.app"
+            echo '   \`\`\`'
+            echo "4. Launch from /Applications. Grant Bluetooth permission when prompted."
+            echo ""
+            echo "## Requirements"
+            echo "- Apple Silicon Mac (M1 or later)"
+            echo "- macOS 13.0 (Ventura) or newer"
+            echo ""
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: Desk Controller ${{ steps.tag.outputs.tag }}
+          body: ${{ steps.notes.outputs.notes }}
+          files: ${{ steps.pkg.outputs.zip }}
+          draft: false
+          prerelease: false

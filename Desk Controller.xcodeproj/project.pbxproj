@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 71;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,9 @@
 		7DA946FD25AD32BB000B4816 /* deskcontroller.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 7DA946FC25AD32BB000B4816 /* deskcontroller.sdef */; };
 		7DA9470025AD3462000B4816 /* MoveDeskCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA946FF25AD3462000B4816 /* MoveDeskCommand.swift */; };
 		81293EBE25F24047007D3663 /* AutoStand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81293EBD25F24047007D3663 /* AutoStand.swift */; };
+		A1B2C3D4E5F6A7B8C9D0E1F3 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A7B8C9D0E1F2 /* NotificationManager.swift */; };
+		F1B2C3D4E5F6A7B8C9D0E1F3 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2C3D4E5F6A7B8C9D0E1F2 /* AboutWindowController.swift */; };
+		D2B2C3D4E5F6A7B8C9D0E1F3 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2C3D4E5F6A7B8C9D0E1F2 /* DebugLog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,9 @@
 		7DA9470825AD8F9A000B4816 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7DA9470A25AD9C93000B4816 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		81293EBD25F24047007D3663 /* AutoStand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoStand.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A7B8C9D0E1F2 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		F1B2C3D4E5F6A7B8C9D0E1F2 /* AboutWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
+		D2B2C3D4E5F6A7B8C9D0E1F2 /* DebugLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,9 @@
 				7D93E28925AAB38B00F37364 /* ViewController.swift */,
 				7D81871F25ABE9FF0076DC19 /* BluetoothManager.swift */,
 				81293EBD25F24047007D3663 /* AutoStand.swift */,
+				A1B2C3D4E5F6A7B8C9D0E1F2 /* NotificationManager.swift */,
+				F1B2C3D4E5F6A7B8C9D0E1F2 /* AboutWindowController.swift */,
+				D2B2C3D4E5F6A7B8C9D0E1F2 /* DebugLog.swift */,
 				7D0361A725AC42770051FB71 /* Desk control */,
 				7D93E2A325AB244500F37364 /* EventMonitor.swift */,
 				7D93E29F25AB203800F37364 /* TouchButton.swift */,
@@ -160,7 +169,6 @@
 				7D93E28025AAB38B00F37364 /* Sources */,
 				7D93E28125AAB38B00F37364 /* Frameworks */,
 				7D93E28225AAB38B00F37364 /* Resources */,
-				7D8B1CC625AC2DDD00ED1970 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -180,8 +188,9 @@
 		7D93E27C25AAB38B00F37364 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1230;
-				LastUpgradeCheck = 1230;
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2630;
 				TargetAttributes = {
 					7D93E28325AAB38B00F37364 = {
 						CreatedOnToolsVersion = 12.3;
@@ -189,7 +198,7 @@
 				};
 			};
 			buildConfigurationList = 7D93E27F25AAB38B00F37364 /* Build configuration list for PBXProject "Desk Controller" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 16.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -198,7 +207,7 @@
 			);
 			mainGroup = 7D93E27B25AAB38B00F37364;
 			packageReferences = (
-				7D8B1CC225AC2DD000ED1970 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				7D8B1CC225AC2DD000ED1970 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 			);
 			productRefGroup = 7D93E28525AAB38B00F37364 /* Products */;
 			projectDirPath = "";
@@ -223,26 +232,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		7D8B1CC625AC2DDD00ED1970 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		7D93E28025AAB38B00F37364 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -255,6 +244,9 @@
 				7D93E2A025AB203800F37364 /* TouchButton.swift in Sources */,
 				7D81872325ABF1500076DC19 /* Extensions.swift in Sources */,
 				81293EBE25F24047007D3663 /* AutoStand.swift in Sources */,
+				A1B2C3D4E5F6A7B8C9D0E1F3 /* NotificationManager.swift in Sources */,
+				F1B2C3D4E5F6A7B8C9D0E1F3 /* AboutWindowController.swift in Sources */,
+				D2B2C3D4E5F6A7B8C9D0E1F3 /* DebugLog.swift in Sources */,
 				7D03619E25AC39B80051FB71 /* Preferences.swift in Sources */,
 				7D81872025ABE9FF0076DC19 /* BluetoothManager.swift in Sources */,
 				7D93E2A425AB244500F37364 /* EventMonitor.swift in Sources */,
@@ -284,7 +276,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -312,9 +304,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -329,11 +324,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -345,7 +341,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -373,9 +369,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -384,10 +383,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -399,21 +399,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Desk Controller/Desk_Controller.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
-				DEVELOPMENT_TEAM = 3P725D2V7A;
+				CURRENT_PROJECT_VERSION = 14;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				INFOPLIST_FILE = "Desk Controller/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 2.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.davidwilliames.Desk-Controller";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6;
 			};
 			name = Debug;
 		};
@@ -423,21 +426,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Desk Controller/Desk_Controller.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
-				DEVELOPMENT_TEAM = 3P725D2V7A;
+				CURRENT_PROJECT_VERSION = 14;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				INFOPLIST_FILE = "Desk Controller/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 2.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.davidwilliames.Desk-Controller";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6;
 			};
 			name = Release;
 		};
@@ -465,12 +471,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7D8B1CC225AC2DD000ED1970 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+		7D8B1CC225AC2DD000ED1970 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -478,7 +484,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		7D8B1CC325AC2DD000ED1970 /* LaunchAtLogin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7D8B1CC225AC2DD000ED1970 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			package = 7D8B1CC225AC2DD000ED1970 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
 			productName = LaunchAtLogin;
 		};
 /* End XCSwiftPackageProductDependency section */

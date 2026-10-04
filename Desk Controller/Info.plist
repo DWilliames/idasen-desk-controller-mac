@@ -27,9 +27,9 @@
 	<key>NSAppleScriptEnabled</key>
 	<true/>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>IMPORTANT: In order to connect to your desk, and be able to control it you must click 'OK'</string>
+	<string>Desk Controller needs Bluetooth access to find and control your IKEA IDÅSEN desk. Click Allow to continue.</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>IMPORTANT: In order to connect to your desk, and be able to control it you must click 'OK'</string>
+	<string>Desk Controller needs Bluetooth access to find and control your IKEA IDÅSEN desk. Click Allow to continue.</string>
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSPrincipalClass</key>

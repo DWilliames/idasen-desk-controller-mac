@@ -161,7 +161,7 @@
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zid-bM-9JT">
                         <rect key="frame" x="18" y="153" width="150" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Automatically stand:" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="iDo-G5-iCI">
+                        <buttonCell key="cell" type="check" title="Stand every:" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="iDo-G5-iCI">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -172,7 +172,7 @@
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gXK-Qb-7OG">
                         <rect key="frame" x="18" y="67" width="229" height="39"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" title="Automatically raise the desk the specified number of minutes per hour if the computer is active." id="1Ee-wo-6JK">
+                        <textFieldCell key="cell" title="The desk sits for the first interval, then stands for the second, then repeats — as long as you've been active recently." id="1Ee-wo-6JK">
                             <font key="font" textStyle="footnote" name=".SFNS-Regular"/>
                             <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -191,7 +191,7 @@
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggi-1R-wj8">
                         <rect key="frame" x="229" y="147" width="19" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <stepperCell key="cell" continuous="YES" alignment="left" increment="5" minValue="5" maxValue="55" doubleValue="10" id="92t-O6-c0r"/>
+                        <stepperCell key="cell" continuous="YES" alignment="left" increment="1" minValue="1" maxValue="55" doubleValue="10" id="92t-O6-c0r"/>
                         <connections>
                             <action selector="changedAutoStandStepper:" target="-2" id="Nhs-t1-HFr"/>
                         </connections>
@@ -209,7 +209,7 @@
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QVO-aT-Ri9">
                         <rect key="frame" x="229" y="118" width="19" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <stepperCell key="cell" continuous="YES" alignment="left" increment="5" minValue="5" maxValue="60" doubleValue="10" id="At4-ul-AS4"/>
+                        <stepperCell key="cell" continuous="YES" alignment="left" increment="1" minValue="1" maxValue="60" doubleValue="10" id="At4-ul-AS4"/>
                         <connections>
                             <action selector="changedAutoStandInactiveStepper:" target="-2" id="jPd-ZJ-kBp"/>
                         </connections>

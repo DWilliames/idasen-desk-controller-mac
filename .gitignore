@@ -100,3 +100,8 @@ Carthage/Build.rbenv-vars
 ####
 # rbenv
 .rbenv-vars
+
+# Built app should not be in source
+Desk Controller.app/
+*.app/
+*.zip
